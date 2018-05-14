@@ -10,6 +10,9 @@
     ],
     "version": "1.0.3",
     "autoload": {
-        "files": ["registration.php"]
+        "files": ["registration.php"],
+        "psr-4": {
+            "Gss\\EmailEvent\\": ""
+        }
     }
 }
