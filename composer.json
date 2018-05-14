@@ -1,5 +1,5 @@
 {
-    "name": "gss/emailevent",
+    "name": "bryanyeh/emailevent",
     "description": "A Magento 2 Extension, sends email of highest % off coupon code to returning customer",
     "require": {
         "php": "~5.6.5 || >=7.0"
