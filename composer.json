@@ -6,7 +6,7 @@
     },
     "type": "magento2-module",
     "license": [
-        "MIT-3.0"
+        "MIT-0"
     ],
     "version": "1.0.3",
     "autoload": {
