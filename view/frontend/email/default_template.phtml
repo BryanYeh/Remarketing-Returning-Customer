@@ -1,0 +1,150 @@
+<!--@subject {{var customer_first_name}} don't miss out on this discount  @-->
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <style type="text/css">
+        {{var template_styles|raw}}
+        {{css file="css/custom-email.css"}}
+    </style>
+</head>
+<body>
+{{inlinecss file="css/email-inline.css"}}
+
+<!-- Begin wrapper table -->
+<table class="wrapper" width="100%">
+    <tr>
+        <td class="wrapper-inner" align="center">
+            <table class="main" align="center">
+                <tr>
+                    <td class="header">
+                        <a class="logo" href="{{store url=""}}">
+                            <img
+                                {{if logo_width}}
+                                    width="{{var logo_width}}"
+                                {{else}}
+                                    width="180"
+                                {{/if}}
+
+                                {{if logo_height}}
+                                    height="{{var logo_height}}"
+                                {{else}}
+                                    height="52"
+                                {{/if}}
+
+                                src="{{var logo_url}}"
+                                alt="{{var logo_alt}}"
+                                border="0"
+                            />
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="main-content">
+                    <!-- Begin Content -->
+
+
+
+                        <p class="greeting">Greetings {{var customer_first_name}} {{var customer_last_name}},</p>
+                        <p class="greeting-note">You can save {{var discount_amount}}% off on your next purchase</p>
+                        <div class="promo"><p>USE PROMOCODE</p><strong class="promo-code">{{var discount_code}}</strong></div>
+
+                        {{depend name_1}}
+                        <br>
+                        <table class="recent">
+                            <tr>
+                                <td class="image">
+                                    <a href="{{var url_1}}">
+                                        <img src="{{var image_1}}" alt="{{var name_1}}">
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="{{var url_1}}">
+                                        <h3 class="name">{{var name_1}}</h3>
+                                        <p>
+                                            <strong class="new_price">{{var special_price_1}}</strong>
+                                            <strike>{{var price_1}}</strike>
+                                        </p>
+                                    </a>
+                                    <a class="buy-now" href="{{var url_1}}" target="_blank">Buy Now</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="image">
+                                    <a href="{{var url_2}}">
+                                        <img src="{{var image_2}}" alt="{{var name_2}}">
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="{{var url_2}}">
+                                        <h3 class="name">{{var name_2}}</h3>
+                                        <p>
+                                            <strong class="new_price">{{var special_price_2}}</strong>
+                                            <strike>{{var price_2}}</strike>
+                                        </p>
+                                    </a>
+                                    <a class="buy-now" href="{{var url_2}}" target="_blank">Buy Now</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="image">
+                                    <a href="{{var url_3}}">
+                                        <img src="{{var image_3}}" alt="{{var name_3}}">
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="{{var url_3}}">
+                                        <h3 class="name">{{var name_3}}</h3>
+                                        <p>
+                                            <strong class="new_price">{{var special_price_3}}</strong>
+                                            <strike>{{var price_3}}</strike>
+                                        </p>
+                                    </a>
+                                    <a class="buy-now" href="{{var url_3}}" target="_blank">Buy Now</a>
+                                </td>
+                            </tr>
+                        </table>
+                        {{/depend}}
+
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="footer">
+                        <p>{{config path="general/store_information/name"}}</p>
+                        <p>{{config path="general/store_information/street_line1"}} {{config path="general/store_information/city"}}, {{config path="general/store_information/region_id"}}, {{config path="general/store_information/postcode"}}</p>
+                        <p><a href="{{config path="web/secure/base_url"}}">Visit Website</a> | <a href="{{var unsubscribe}}">Unsubscribe</a></p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<!-- End wrapper table -->
+</body>
+
+
+
+<!--@styles 
+.wrapper{background:#e8e8e8;}
+.main{background:#fff;}
+.header{text-align:center;border-bottom:#e8e8e8 1px solid;padding:20px !important;}
+.main-content{padding:20px;}
+.greeting{text-align: center;font-size: 25px;color: #3aaee0;padding-top: 20px;padding-bottom: 20px;}
+.greeting-note{font-size: 20px;text-align: center;color: #505050;padding-bottom: 20px;}
+.promo{background-color: #e8e8e8;padding: 50px 20px;font-size: 25px;text-align: center;}
+.promo-code{border:dashed 2px;padding:5px 10px;background:#fff;}
+.recent{width:100%;}
+.recent tr{height:135px}
+.recent td{vertical-align:middle !important;}
+.image{text-align: center;width: 30%;}
+.image img {max-width: 100px;max-height: 100px;}
+.name{color: #000;margin-top:0 !important;}
+.new_price {color: #f00;font-size: 20px;}
+.buy-now {color: #fff !important;background: #3aaee2;padding: 10px 40px;}
+.footer {background: #e8e8e8;text-align: center;padding: 10px !important;font-size: 12px;}
+@-->

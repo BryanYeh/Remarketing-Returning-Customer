@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="controller_action_predispatch_customer_account_loginPost">
+        <observer name="gss_customer_authenticated" instance="Gss\EmailEvent\Observer\ScheduleEmail" />
+    </event>
+    <event name="customer_login">
+        <observer name="gss_customer_login" instance="Gss\EmailEvent\Observer\CustomerLogin" />
+    </event>
+    <event name="checkout_onepage_controller_success_action">
+        <observer name="gss_cancel_schedule" instance="Gss\EmailEvent\Observer\CancelEmailSchedule" />
+    </event>
+</config>
